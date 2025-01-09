@@ -360,7 +360,7 @@
                     topmenu-navitem cursor-pointer relative px-2 text-white hover:text-gray-300"
                     style="line-height: 1.6rem;">
                     <span class="flex items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-5 w-5 mr-1" fill="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-3 w-3 mr-1" fill="currentColor">
                         <path d="M448 480L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l128 0c20.1 0 39.1 9.5 51.2 25.6l19.2 25.6c6 8.1 15.5 12.8 25.6 12.8l160 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64zM184 272c-13.3 0-24 10.7-24 24s10.7 24 24 24l144 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-144 0z"/>
                       </svg>
                       Bulk Delete
@@ -437,11 +437,11 @@
                 <div class="modal workflow modals_workflows_show_delete" style="display: none; max-width: 500px; margin: auto;">
                   <div role="document" class="modal-dialog">
                     <div class="modal-content bg-gray-100 text-black rounded-lg shadow-lg">
-                      <div class="modal-header border-b border-gray-300 rounded-t-lg flex justify-between items-center p-4">
+                      <div class="modal-header modal-header--inner border-b border-gray-300 rounded-t-lg flex justify-between items-center p-4">
                         <h5 class="modal-title font-semibold text-lg">Workflows</h5>
-                        <button type="button" data-dismiss="modal" aria-label="Close" class="text-black hover:text-gray-600">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                      <button type="button" data-dismiss="modal" aria-label="Close" class="close workflow">
+                        <span aria-hidden="true">×</span>
+                      </button>
                       </div>
                       <div class="modal-body p-4">
                         <div>

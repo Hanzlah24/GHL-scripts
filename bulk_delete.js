@@ -350,26 +350,24 @@
             location.href.includes("location") &&
             document.querySelectorAll(".workflow_script_sm_delete").length == 0x0
           ) {
-            document.querySelector(".topmenu-nav").insertAdjacentHTML(
-              "beforeend",
-              `
-              <style>
-              a.group.workflow_script_sm_delete.skiptranslate {
-                display: block!important;
-              }
-              </style>
-              <a class="group workflow_script_sm_delete skiptranslate text-left mx-1 pb-2 md:pb-3 text-sm font-medium 
-                  topmenu-navitem cursor-pointer relative px-2 text-white hover:text-gray-300"
-                  style="line-height: 1.6rem;">
-                  <span class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M20 9l-8 8-8-8" />
-                    </svg>
-                    Bulk Delete
-                  </span>
-              </a>
-            `
-            );
+            document.querySelector(".topmenu-nav").insertAdjacentHTML("beforeend", `
+                <style>
+                a.group.workflow_script_sm_delete.skiptranslate {
+                  display: block!important;
+                }
+                </style>
+                <a class="group workflow_script_sm_delete skiptranslate text-left mx-1 pb-2 md:pb-3 text-sm font-medium 
+                    topmenu-navitem cursor-pointer relative px-2 text-white hover:text-gray-300"
+                    style="line-height: 1.6rem;">
+                    <span class="flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-5 w-5 mr-1" fill="currentColor">
+                        <path d="M448 480L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l128 0c20.1 0 39.1 9.5 51.2 25.6l19.2 25.6c6 8.1 15.5 12.8 25.6 12.8l160 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64zM184 272c-13.3 0-24 10.7-24 24s10.7 24 24 24l144 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-144 0z"/>
+                      </svg>
+                      Bulk Delete
+                    </span>
+                </a>
+              `);
+              
             setTimeout(function () {
               document.querySelector(".workflow_script_sm_delete").onclick =
                 _0x31cb9f;
@@ -434,61 +432,56 @@
               "beforeend",
               "<style>\n        .modals_workflows_show_delete .modal-content {\n          max-width: 100%!important;\n          width: 100%!important;\n      }\n      a.group.workflow_script_sm_delete.skiptranslate {\n        display: block!important;\n    }\n      .modals_workflows_show_delete .modal-body--inner,.modal-header--inner {\n          max-width: 100%!important;\n      }\n      \n      .modals_workflows_show_delete  .modal-dialog{\n          max-width: 70%!important;\n      }\n        </style>"
             );
-            document.querySelector("#app").insertAdjacentHTML(
-              "beforeend",
-              `
-              <!-- Modal for Bulk Deletion -->
-              <div class="modal workflow modals_workflows_show_delete" style="display: none;">
-                <div role="document" class="modal-dialog">
-                  <div class="modal-content bg-black text-white rounded-lg shadow-lg">
-                    <div class="modal-header border-b border-gray-700 rounded-t-lg">
-                      <div class="flex justify-between items-center w-full">
+            document.querySelector("#app").insertAdjacentHTML("beforeend", `
+                <!-- Modal for Bulk Deletion -->
+                <div class="modal workflow modals_workflows_show_delete" style="display: none; max-width: 500px; margin: auto;">
+                  <div role="document" class="modal-dialog">
+                    <div class="modal-content bg-gray-100 text-black rounded-lg shadow-lg">
+                      <div class="modal-header border-b border-gray-300 rounded-t-lg flex justify-between items-center p-4">
                         <h5 class="modal-title font-semibold text-lg">Workflows</h5>
-                        <button type="button" data-dismiss="modal" aria-label="Close" class="text-white hover:text-gray-400">
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="text-black hover:text-gray-600">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                    </div>
-                    <div class="modal-body p-4">
-                      <div>
-                        <h2 class="text-xl mb-4">Choose the folder/workflow to delete</h2>
-                        <button type="button"
-                          class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-red-500 hover:bg-red-600 rounded"
-                          style="border: 1px solid white;">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                          </svg>
-                          Delete Selected
-                        </button>
-                      </div>
-                      <div class="card w-full bg-gray-800 mt-4 rounded-lg">
-                        <div class="p-4">
-                          <ul class="console_data_delete text-white">
-                            <!-- List Items -->
-                          </ul>
+                      <div class="modal-body p-4">
+                        <div>
+                          <h2 class="text-lg mb-4">Choose the folder/workflow to delete</h2>
+                          <button type="button"
+                            class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-red-500 hover:bg-red-600 rounded"
+                            style="border: 1px solid white;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-4 w-4 mr-1" fill="currentColor">
+                              <path d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"/>
+                            </svg>
+                            Delete Selected
+                          </button>
                         </div>
-                        <div class="table-wrap">
-                          <table class="table-auto w-full text-left">
-                            <thead class="border-b border-gray-700">
-                              <tr>
-                                <th class="p-2"><input type="checkbox" class="todeleteidall" value="1"></th>
-                                <th class="p-2">Name</th>
-                                <th class="p-2">Type</th>
-                                <th class="p-2">Status</th>
-                              </tr>
-                            </thead>
-                            <tbody class='workflows_tbody_delete'>
-                              <!-- Dynamic Content -->
-                            </tbody>
-                          </table>
+                        <div class="card w-full bg-white mt-4 rounded-lg border border-gray-300">
+                          <div class="p-4">
+                            <ul class="console_data_delete text-black">
+                              <!-- List Items -->
+                            </ul>
+                          </div>
+                          <div class="table-wrap">
+                            <table class="table-auto w-full text-left">
+                              <thead class="border-b border-gray-300">
+                                <tr>
+                                  <th class="p-2"><input type="checkbox" class="todeleteidall" value="1"></th>
+                                  <th class="p-2">Name</th>
+                                  <th class="p-2">Type</th>
+                                  <th class="p-2">Status</th>
+                                </tr>
+                              </thead>
+                              <tbody class='workflows_tbody_delete'>
+                                <!-- Dynamic Content -->
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              `
-            );
+                `);
           }
           _0x1e94bc = "root";
           if (location.href.includes("folder=")) {
